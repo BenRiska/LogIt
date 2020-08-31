@@ -1,13 +1,102 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  height: 100vh;
+  width: 100vw;
+  background-color: #232427;
+}
+
+/* Entry Page */
+
+.entry {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.entry-content {
+  height: 40rem;
+  width: 70rem;
+  border-radius: 1rem;
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.entry-header {
+  background: #2a2b2f;
+  margin: 2rem;
+  width: 50%;
+  padding: 1.5rem 0;
+  border: 2px solid #1e1f23;
+  border-radius: 1rem;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entry-header h1 {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.slogan {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.7rem;
+}
+
+.entry form {
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  width: 80%;
+  margin: 2rem;
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.entry form label {
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.3rem 0;
+}
+
+.entry form button {
+  width: 8rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: #2a2b2f;
+  color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #1e1f23;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.entry form p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.entry form p span {
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: underline;
 }

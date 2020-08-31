@@ -1,31 +1,70 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Entry() {
-  const [logIn, setLogin] = useState(false);
+function Entry(props) {
+  const {
+    setEmail,
+    setPassword,
+    logIn,
+    signUp,
+    hasAccount,
+    setHasAccount,
+    emailError,
+    passwordError,
+  } = props;
+
   return (
     <div className="entry">
-      <button onClick={(e) => setLogin(!logIn)}>
-        {logIn ? "Sign Up" : "Log In"}
-      </button>
-      {!logIn ? (
-        <form>
-          <h3>Sign Up</h3>
-          <label>Name</label>
-          <input for="name" type="text" />
-          <label>Email</label>
-          <input for="email" type="email" />
-          <label>Password</label>
-          <input for="password" type="password" />
-        </form>
-      ) : (
-        <form>
-          <h3>Log In</h3>
-          <label>Email</label>
-          <input for="email" type="email" />
-          <label>Password</label>
-          <input for="password" type="password" />
-        </form>
-      )}
+      <div className="entry-content">
+        <div className="entry-header">
+          <h1>LOG IT</h1>
+        </div>
+        <p className="slogan">The #1 Task Managing App.</p>
+        {!hasAccount ? (
+          <form onSubmit={(e) => signUp(e)}>
+            <label>Email</label>
+            <input
+              for="email"
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <div>{emailError}</div>
+            <label>Password</label>
+            <input
+              for="password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div>{passwordError}</div>
+            <button>Sign Up</button>
+            <p>
+              Have an account? Log in{" "}
+              <span onClick={(e) => setHasAccount(!hasAccount)}>Here</span>
+            </p>
+          </form>
+        ) : (
+          <form onSubmit={(e) => logIn(e)}>
+            <label>Email</label>
+            <input
+              for="email"
+              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <div>{emailError}</div>
+            <label>Password</label>
+            <input
+              for="password"
+              type="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div>{passwordError}</div>
+            <button>Log In</button>
+            <p>
+              Don't have an account? Sign up{" "}
+              <span onClick={(e) => setHasAccount(!hasAccount)}>Here</span>
+            </p>
+          </form>
+        )}
+      </div>
     </div>
   );
 }

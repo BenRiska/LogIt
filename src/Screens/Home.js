@@ -1,7 +1,12 @@
 import React from "react";
 
-function Home() {
-  return <div className="home"></div>;
+function Home(props) {
+  const { logOut } = props;
+  return (
+    <div className="home">
+      <button onClick={logOut}>Log Out</button>
+    </div>
+  );
 }
 
 export default Home;
