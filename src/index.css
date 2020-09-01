@@ -25,7 +25,7 @@
 
 .entry-content {
   height: 40rem;
-  width: 70rem;
+  width: 60rem;
   border-radius: 1rem;
   box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
     inset -5px -5px 15px rgba(255, 255, 255, 0.1),
@@ -65,7 +65,7 @@
     inset -5px -5px 15px rgba(255, 255, 255, 0.1),
     5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
-  width: 80%;
+  width: 50%;
   margin: 2rem;
   display: flex;
   align-items: left;
@@ -99,4 +99,44 @@
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: underline;
+}
+
+/* home page */
+
+.home-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  height: 10vh;
+}
+
+.home-nav h3 {
+  font-size: 2rem;
+  margin: 0 1rem;
+}
+
+.home-content {
+  height: 90vh;
+  display: flex;
+  width: 100%;
+}
+
+.home-board {
+  width: 50%;
+  height: 100%;
+}
+
+.task-section {
+  width: 50%;
+  height: 100%;
+}
+
+.task-form {
+  color: rgba(63, 50, 50, 0.5);
+}
+
+.task {
+  color: rgba(255, 255, 255, 0.5);
 }

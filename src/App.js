@@ -86,7 +86,7 @@ function App() {
   return (
     <div className="app">
       {user ? (
-        <Home logOut={logOut} />
+        <Home logOut={logOut} user={user} />
       ) : (
         <Entry
           setEmail={setEmail}
