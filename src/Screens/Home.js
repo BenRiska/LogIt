@@ -14,7 +14,9 @@ function Home(props) {
     <div className="home">
       <nav className="home-nav">
         <h3>Log It</h3>
-        <button onClick={logOut}>Log Out</button>
+        <button className="btn" onClick={logOut}>
+          Log Out
+        </button>
       </nav>
       <div className="home-content">
         <div className="home-board">
@@ -24,7 +26,9 @@ function Home(props) {
           <TaskList userId={user.uid} />
         </div>
       </div>
-      <footer>Log It || 2020</footer>
+      <footer>
+        <span>Ben Taylor | 2020</span>
+      </footer>
     </div>
   );
 }

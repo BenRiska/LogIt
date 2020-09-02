@@ -27,7 +27,7 @@ const TaskList = (props) => {
   const { userId } = props;
   const notes = useNotes(userId);
   return (
-    <div>
+    <div className="task-list">
       <ol>
         {notes.map((note) => (
           <Task key={note.id} note={note} />
