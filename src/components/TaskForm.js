@@ -5,6 +5,7 @@ const TaskForm = (props) => {
   const { userId } = props;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ const TaskForm = (props) => {
       .add({
         title,
         description,
+        date,
         userId,
       })
       .then(() => {
@@ -68,6 +70,15 @@ const TaskForm = (props) => {
         <textarea
           type="textfield"
           onChange={(e) => setDescription(e.target.value)}
+        />
+      </div>
+      <div className="input">
+        <label>Deadline</label>
+        <input
+          type="datetime-local"
+          onChange={(e) => {
+            setDate(e.target.value.split("T").join(" "));
+          }}
         />
       </div>
       <button className="btn">Log It</button>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import fire from "../fire";
 import Task from "./Task";
+import Modal from "./Modal";
 
 const useNotes = (userId) => {
   const [notes, setNotes] = useState([]);
@@ -26,13 +27,30 @@ const useNotes = (userId) => {
 const TaskList = (props) => {
   const { userId } = props;
   const notes = useNotes(userId);
+  const [modal, setModal] = useState(false);
+  const [modalTask, setModalTask] = useState("");
+
+  const activateModal = (note) => {
+    setModal(!modal);
+    setModalTask(note);
+  };
+  const deActivateModal = () => {
+    setModal(!modal);
+    setModalTask("");
+  };
+
   return (
-    <div className="task-list">
-      <ol>
-        {notes.map((note) => (
-          <Task key={note.id} note={note} />
-        ))}
-      </ol>
+    <div className="task-list-section">
+      {!modal ? (
+        <ul className="task-list">
+          {notes.map((note) => (
+            <Task activateModal={activateModal} key={note.id} note={note} />
+          ))}
+        </ul>
+      ) : (
+        <Modal task={modalTask} deActivateModal={deActivateModal} />
+      )}
+      <div className="widgets"></div>
     </div>
   );
 };
