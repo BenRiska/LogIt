@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import fire from "../fire";
 import Task from "./Task";
 import Modal from "./Modal";
+import Widgets from "./Widgets";
 
 const useNotes = (userId) => {
   const [notes, setNotes] = useState([]);
@@ -50,7 +51,9 @@ const TaskList = (props) => {
       ) : (
         <Modal task={modalTask} deActivateModal={deActivateModal} />
       )}
-      <div className="widgets"></div>
+      <div className="widgets-container">
+        <Widgets />
+      </div>
     </div>
   );
 };

@@ -5,9 +5,11 @@ const Modal = (props) => {
   return (
     <div className="modal">
       <h3>{title}</h3>
-      <p>{date}</p>
-      <p>{description}</p>
-      <button onClick={(e) => props.deActivateModal()}>Exit</button>
+      <p className="modal-date">Deadline - {date}</p>
+      <p className="modal-des">{description}</p>
+      <button className="btn" onClick={(e) => props.deActivateModal()}>
+        Exit
+      </button>
     </div>
   );
 };

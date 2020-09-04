@@ -13,7 +13,7 @@
 }
 
 .btn {
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.6rem;
   text-decoration: none;
   text-transform: uppercase;
   border: none;
@@ -171,7 +171,7 @@
 .task-form h3 {
   background: #2a2b2f;
   margin: 1rem;
-  width: 70%;
+  width: 50%;
   padding: 0.5rem;
   border: 2px solid #1e1f23;
   border-radius: 1rem;
@@ -302,7 +302,7 @@
   align-items: center;
 }
 
-.task-list-section ul {
+.task-list-section .task-list {
   width: 45%;
   height: 100%;
   box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
@@ -352,9 +352,35 @@
   border-radius: 1rem;
   padding: 2rem;
   color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.widgets {
+.modal h3 {
+  background: #2a2b2f;
+  margin: 1rem;
+  width: 70%;
+  padding: 0.5rem;
+  border: 2px solid #1e1f23;
+  border-radius: 1rem;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.modal .modal-date {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.modal .modal-des {
+  font-size: 1rem;
+  margin: 1rem;
+}
+
+.widgets-container {
   width: 45%;
   height: 100%;
   box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
@@ -362,6 +388,51 @@
     5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   padding: 2rem;
+}
+
+.widgets {
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.widgets h3 {
+  background: #2a2b2f;
+  margin: 0.5rem;
+  width: 50%;
+  padding: 0.5rem;
+  border: 2px solid #1e1f23;
+  border-radius: 1rem;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.links-container {
+  width: 100%;
+  padding: 1rem;
+  list-style: none;
+}
+
+.widget-link {
+  color: rgba(255, 255, 255, 0.5);
+  background: #2a2b2f;
+  border: 2px solid #1e1f23;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.widget-link a {
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
 }
 
 /* footer */
