@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import fire from "../fire";
-import Modal from "./Modal";
 
 const Task = (props) => {
   const { title, id, description, date } = props.note;
-  const [modal, setModal] = useState(false);
   const deleteTask = () => {
     console.log("deleted");
     fire.firestore().collection("notes").doc(id).delete();

@@ -68,18 +68,17 @@ function App() {
     fire.auth().signOut();
   };
 
-  const authListener = () => {
-    fire.auth().onAuthStateChanged((user) => {
-      if (user) {
-        clearInputs();
-        setUser(user);
-      } else {
-        setUser("");
-      }
-    });
-  };
-
   useEffect(() => {
+    const authListener = () => {
+      fire.auth().onAuthStateChanged((user) => {
+        if (user) {
+          clearInputs();
+          setUser(user);
+        } else {
+          setUser("");
+        }
+      });
+    };
     authListener();
   }, []);
 

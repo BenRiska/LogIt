@@ -21,7 +21,7 @@ const useNotes = (userId) => {
       });
 
     return () => unSub();
-  }, []);
+  }, [userId]);
   return notes;
 };
 

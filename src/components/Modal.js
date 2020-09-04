@@ -1,7 +1,7 @@
 import React from "react";
 
 const Modal = (props) => {
-  const { title, id, description, date } = props.task;
+  const { title, description, date } = props.task;
   return (
     <div className="modal">
       <h3>{title}</h3>
