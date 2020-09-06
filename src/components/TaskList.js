@@ -3,6 +3,7 @@ import fire from "../fire";
 import Task from "./Task";
 import Modal from "./Modal";
 import Widgets from "./Widgets";
+import ResourceForm from "./ResourceForm";
 
 const useNotes = (userId) => {
   const [notes, setNotes] = useState([]);
@@ -30,6 +31,7 @@ const TaskList = (props) => {
   const notes = useNotes(userId);
   const [modal, setModal] = useState(false);
   const [modalTask, setModalTask] = useState("");
+  const [form, setForm] = useState(false);
 
   const activateModal = (note) => {
     setModal(!modal);
@@ -40,10 +42,15 @@ const TaskList = (props) => {
     setModalTask("");
   };
 
+  const toggleForm = () => {
+    setForm(!form);
+  };
+
   return (
     <div className="task-list-section">
       {!modal ? (
         <ul className="task-list">
+          <h3 className="title">Tasks</h3>
           {notes.map((note) => (
             <Task activateModal={activateModal} key={note.id} note={note} />
           ))}
@@ -52,7 +59,11 @@ const TaskList = (props) => {
         <Modal task={modalTask} deActivateModal={deActivateModal} />
       )}
       <div className="widgets-container">
-        <Widgets />
+        {!form ? (
+          <Widgets userId={userId} toggleForm={toggleForm} />
+        ) : (
+          <ResourceForm userId={userId} toggleForm={toggleForm} />
+        )}
       </div>
     </div>
   );
