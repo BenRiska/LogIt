@@ -13,7 +13,7 @@
 }
 
 .btn {
-  padding: 0.8rem 1.6rem;
+  padding: 0.5rem 1.3rem;
   text-decoration: none;
   text-transform: uppercase;
   border: none;
@@ -316,7 +316,8 @@
   flex-direction: column;
   align-items: center;
 }
-.task-list .title {
+.task-list .title,
+.resource-form .title {
   background: #2a2b2f;
   margin: 0.5rem;
   width: 50%;
@@ -329,7 +330,8 @@
   font-size: 1.5rem;
 }
 
-.task {
+.task,
+.edit-task {
   color: rgba(255, 255, 255, 0.5);
   background: #2a2b2f;
   border: 2px solid #1e1f23;
@@ -348,7 +350,8 @@
   justify-content: center;
 }
 
-.task i {
+.task i,
+.edit-task i {
   color: #ff105e;
   cursor: pointer;
 }
@@ -451,7 +454,27 @@
   align-items: center;
   display: inline;
   text-decoration: none;
-  height: 100%;
+}
+
+/* resource form */
+
+.resource-form form {
+  color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-icon {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  margin: 0.5rem;
 }
 
 /* footer */

@@ -6,23 +6,29 @@ const TaskForm = (props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
+  const [error, setError] = useState("");
+  setTimeout(setError, 3000);
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    fire
-      .firestore()
-      .collection("notes")
-      .add({
-        title,
-        description,
-        date,
-        userId,
-      })
-      .then(() => {
-        setTitle("");
-        setDescription("");
-      });
+    if (title === "" || description === "" || date === "") {
+      setError("Please fill in fields properly.");
+      return;
+    } else {
+      fire
+        .firestore()
+        .collection("notes")
+        .add({
+          title,
+          description,
+          date,
+          userId,
+        })
+        .then(() => {
+          setTitle("");
+          setDescription("");
+        });
+    }
   };
 
   const startClock = () => {
@@ -63,13 +69,24 @@ const TaskForm = (props) => {
       <h3>Add Task</h3>
       <div className="input">
         <label>Task Name</label>
-        <input type="text" onChange={(e) => setTitle(e.target.value)} />
+        <input
+          value={title}
+          type="text"
+          onChange={(e) => {
+            setError("");
+            setTitle(e.target.value);
+          }}
+        />
       </div>
       <div className="input">
         <label>Details</label>
         <textarea
+          value={description}
           type="textfield"
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={(e) => {
+            setError("");
+            setDescription(e.target.value);
+          }}
         />
       </div>
       <div className="input">
@@ -77,10 +94,12 @@ const TaskForm = (props) => {
         <input
           type="datetime-local"
           onChange={(e) => {
+            setError("");
             setDate(e.target.value.split("T").join(" "));
           }}
         />
       </div>
+      {error && <div className="error">{error}</div>}
       <button className="btn">Log It</button>
     </form>
   );
