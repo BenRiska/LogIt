@@ -66,41 +66,43 @@ const TaskForm = (props) => {
           <div className="sc" id="sc"></div>
         </div>
       </div>
-      <h3>Add Task</h3>
-      <div className="input">
-        <label>Task Name</label>
-        <input
-          value={title}
-          type="text"
-          onChange={(e) => {
-            setError("");
-            setTitle(e.target.value);
-          }}
-        />
+      <div className="form-content">
+        <h3>Add Task</h3>
+        <div className="input">
+          <label>Task Name</label>
+          <input
+            value={title}
+            type="text"
+            onChange={(e) => {
+              setError("");
+              setTitle(e.target.value);
+            }}
+          />
+        </div>
+        <div className="input">
+          <label>Details</label>
+          <textarea
+            value={description}
+            type="textfield"
+            onChange={(e) => {
+              setError("");
+              setDescription(e.target.value);
+            }}
+          />
+        </div>
+        <div className="input">
+          <label>Deadline</label>
+          <input
+            type="datetime-local"
+            onChange={(e) => {
+              setError("");
+              setDate(e.target.value.split("T").join(" "));
+            }}
+          />
+        </div>
+        {error && <div className="error">{error}</div>}
+        <button className="btn task-form-btn">Log It</button>
       </div>
-      <div className="input">
-        <label>Details</label>
-        <textarea
-          value={description}
-          type="textfield"
-          onChange={(e) => {
-            setError("");
-            setDescription(e.target.value);
-          }}
-        />
-      </div>
-      <div className="input">
-        <label>Deadline</label>
-        <input
-          type="datetime-local"
-          onChange={(e) => {
-            setError("");
-            setDate(e.target.value.split("T").join(" "));
-          }}
-        />
-      </div>
-      {error && <div className="error">{error}</div>}
-      <button className="btn">Log It</button>
     </form>
   );
 };

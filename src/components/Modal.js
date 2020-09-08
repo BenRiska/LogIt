@@ -18,22 +18,29 @@ const Modal = (props) => {
     <div className="modal">
       {!editTask ? (
         <div className="task-content">
-          <button className="btn" onClick={(e) => props.deActivateModal()}>
+          <button
+            className="btn task-btn"
+            onClick={(e) => props.deActivateModal()}
+          >
             Exit
           </button>
           <h3>{title}</h3>
           <p className="modal-date">Deadline - {date}</p>
           <p className="modal-des">{description}</p>
-          <button onClick={toggleEditTask}>Edit</button>
-          <div
-            className="del"
-            onClick={(e) => {
-              e.stopPropagation();
-              deleteTask();
-              setTimeout(props.deActivateModal, 500);
-            }}
-          >
-            <i className="fas fa-times fa-2x"></i>
+          <div className="modal-btns">
+            <button className="btn" onClick={toggleEditTask}>
+              Edit
+            </button>
+            <button
+              className="btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                deleteTask();
+                setTimeout(props.deActivateModal, 500);
+              }}
+            >
+              Delete
+            </button>
           </div>
         </div>
       ) : (

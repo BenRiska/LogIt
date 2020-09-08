@@ -33,9 +33,9 @@ const ResourceForm = (props) => {
 
   return (
     <div className="resource-form">
-      <div onClick={props.toggleForm}>
-        <i class="fas fa-backward back-icon fa-2x"></i>
-      </div>
+      <button onClick={props.toggleForm} className="btn">
+        Back
+      </button>
       <form onSubmit={(e) => onSubmit(e)}>
         <h3 className="title">Add Resource</h3>
         <div className="input">

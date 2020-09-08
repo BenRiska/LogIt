@@ -2,10 +2,11 @@ import React from "react";
 import fire from "../fire";
 
 const Task = (props) => {
-  const { title, id, description, date } = props.note;
-
+  let { title, id, description, date } = props.note;
+  date = date.split("-");
+  const month = date[1];
+  const day = date[2].split(" ")[0];
   const deleteTask = () => {
-    console.log("deleted");
     fire.firestore().collection("notes").doc(id).delete();
   };
 
@@ -17,7 +18,7 @@ const Task = (props) => {
     >
       <h3>{title}</h3>
       <p>{description.slice(0, 8)}...</p>
-      <p>{date}</p>
+      <p>{`${month} / ${day}`}</p>
       <div
         className="del"
         onClick={(e) => {

@@ -22,15 +22,10 @@ function Entry(props) {
         {!hasAccount ? (
           <form onSubmit={(e) => signUp(e)}>
             <label>Email</label>
-            <input
-              for="email"
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            <input type="email" onChange={(e) => setEmail(e.target.value)} />
             <div>{emailError}</div>
             <label>Password</label>
             <input
-              for="password"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -44,15 +39,10 @@ function Entry(props) {
         ) : (
           <form onSubmit={(e) => logIn(e)}>
             <label>Email</label>
-            <input
-              for="email"
-              type="email"
-              onChange={(e) => setEmail(e.target.value)}
-            />
+            <input type="email" onChange={(e) => setEmail(e.target.value)} />
             <div>{emailError}</div>
             <label>Password</label>
             <input
-              for="password"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
             />
