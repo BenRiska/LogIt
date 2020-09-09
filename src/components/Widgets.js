@@ -30,15 +30,19 @@ const Widgets = (props) => {
   return (
     <div className="widgets">
       <h3>Resources</h3>
-      <button className="btn" onClick={props.toggleForm}>
-        Edit
-      </button>
-      <ul className="links-container">
-        {resources &&
-          resources.map((resource) => (
-            <Resource key={resource.id} resource={resource} />
-          ))}
-      </ul>
+      <div className="added-layer">
+        <ul className="links-container">
+          {resources &&
+            resources.map((resource) => (
+              <Resource key={resource.id} resource={resource} />
+            ))}
+        </ul>
+      </div>
+      <div className="widg-btn-con">
+        <button className="btn" onClick={props.toggleForm}>
+          Edit
+        </button>
+      </div>
     </div>
   );
 };

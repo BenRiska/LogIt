@@ -31,8 +31,7 @@ const UpdateTask = (props) => {
   };
 
   return (
-    <div>
-      <button onClick={props.toggleEdit}>back</button>
+    <div className="edit-form">
       <form onSubmit={(e) => handleSubmit(e)}>
         <div className="input">
           <label>Task Name</label>
@@ -67,7 +66,12 @@ const UpdateTask = (props) => {
           />
         </div>
         <div>{error}</div>
-        <button className="btn">Update</button>
+        <div className="modal-btns">
+          <button className="btn" onClick={props.toggleEdit}>
+            back
+          </button>
+          <button className="btn">Update</button>
+        </div>
       </form>
     </div>
   );

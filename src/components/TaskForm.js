@@ -8,6 +8,8 @@ const TaskForm = (props) => {
   const [date, setDate] = useState("");
   const [error, setError] = useState("");
   setTimeout(setError, 3000);
+  const fullDate = new Date();
+  console.log(fullDate);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -55,6 +57,7 @@ const TaskForm = (props) => {
 
   return (
     <form onSubmit={(e) => onSubmit(e)} className="task-form">
+      <div className="date-title">{fullDate.toDateString()}</div>
       <div className="clock">
         <div className="hour">
           <div className="hr" id="hr"></div>

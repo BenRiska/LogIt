@@ -16,7 +16,7 @@ const Task = (props) => {
       key={id}
       className="task"
     >
-      <h3>{title}</h3>
+      <h3>{title.slice(0, 10)}...</h3>
       <p>{description.slice(0, 8)}...</p>
       <p>{`${month} / ${day}`}</p>
       <div

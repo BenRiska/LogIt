@@ -19,8 +19,13 @@
   color: var(--primary-color);
 }
 
+input,
+textarea {
+  color: black;
+}
+
 .app {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: #232427;
 }
@@ -117,12 +122,15 @@
 
 /* home page */
 
+.home {
+  min-height: 90vh;
+}
+
 .home-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  height: 10vh;
 }
 
 .home-nav h3 {
@@ -131,14 +139,15 @@
 }
 
 .home-content {
-  height: 80vh;
+  height: 100%;
+  min-height: 85vh;
   display: flex;
   width: 100%;
 }
 
 .home-board {
   width: 30%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
 }
@@ -147,7 +156,7 @@
 
 .task-section {
   width: 70%;
-  height: 100%;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
 }
@@ -157,10 +166,22 @@
   border-radius: 1rem;
   padding: 2rem;
   width: 100%;
-  margin: 2rem;
+  margin: 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.date-title {
+  background: #2a2b2f;
+  margin: 1rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #1e1f23;
+  border-radius: 1rem;
+  box-shadow: var(--header-shadow);
+  text-align: center;
+  font-size: var(--title-font-size);
 }
 
 .task-form h3 {
@@ -307,7 +328,7 @@
   border-radius: 1rem;
   padding: 2rem;
   width: 100%;
-  margin: 2rem;
+  margin: 0 1.5rem 0 0.5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -318,7 +339,7 @@
   height: 100%;
   box-shadow: var(--general-shadow);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   list-style: none;
   overflow: auto;
   display: flex;
@@ -328,7 +349,7 @@
 .task-list .title,
 .resource-form .title {
   background: #2a2b2f;
-  margin: 0.5rem;
+  margin: 0.5rem 0.5rem 1.5rem 0.5rem;
   width: 100%;
   padding: 0.5rem;
   border: 2px solid #1e1f23;
@@ -338,8 +359,7 @@
   font-size: var(--title-font-size);
 }
 
-.task,
-.edit-task {
+.task {
   background: #2a2b2f;
   border: 2px solid #1e1f23;
   box-shadow: var(--header-shadow);
@@ -349,7 +369,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 1rem;
+  margin: 0.1rem 1rem;
 }
 
 .del {
@@ -406,13 +426,26 @@
 
 .modal .modal-date {
   font-size: 1.5rem;
+  width: 100%;
   margin: 1rem;
+  background: #2a2b2f;
+  border: 2px solid #1e1f23;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
 }
 
 .modal .modal-des {
   font-size: 1rem;
   margin: 1rem;
   height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background: #2a2b2f;
+  border: 2px solid #1e1f23;
+  border-radius: 1rem;
+  overflow-wrap: break-word;
+  overflow: scroll;
 }
 
 .modal-btns {
@@ -429,6 +462,28 @@
   margin: 0;
 }
 
+/* edit form */
+
+.edit-form {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: scroll;
+  border-radius: 1rem;
+}
+
+.edit-form form {
+  width: 90%;
+  height: 100%;
+}
+
+.edit-form form textarea {
+  min-height: 8rem;
+}
+
 /* widgets */
 
 .widgets-container {
@@ -436,13 +491,15 @@
   height: 100%;
   box-shadow: var(--general-shadow);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1rem;
+  overflow: auto;
 }
 
 .widgets {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .widgets h3 {
@@ -457,28 +514,40 @@
   font-size: var(--title-font-size);
 }
 
-.links-container {
+.added-layer {
   width: 100%;
   padding: 1rem;
+  height: 100%;
+}
+
+.links-container {
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0.5rem;
+}
+
+.widg-btn-con {
+  width: 100%;
 }
 
 .widget-link {
   background: #2a2b2f;
   border: 2px solid #1e1f23;
   box-shadow: var(--header-shadow);
-  padding: 1rem 2rem;
   border-radius: 1rem;
   width: 100%;
-  height: 100%;
 }
 
 .widget-link a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  display: inline;
   text-decoration: none;
+  text-align: center;
+  display: block;
+  height: 100%;
+  padding: 1rem;
 }
 
 /* resource form */
@@ -498,9 +567,25 @@
   margin: 0.5rem;
 }
 
+.current-resources ul {
+  width: 100%;
+}
+
+.edit-task {
+  background: #2a2b2f;
+  border: 2px solid #1e1f23;
+  box-shadow: var(--header-shadow);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+
 /* footer */
 footer {
-  height: 10vh;
+  padding: 2rem;
   text-align: center;
   font-size: var(--title-font-size);
   display: flex;

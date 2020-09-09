@@ -5,6 +5,7 @@ import fire from "../fire";
 const Modal = (props) => {
   const { title, id, description, date } = props.task;
   const [editTask, setEditTask] = useState(false);
+  const dates = date.split("-");
   const deleteTask = () => {
     console.log("deleted");
     fire.firestore().collection("notes").doc(id).delete();
@@ -25,7 +26,7 @@ const Modal = (props) => {
             Exit
           </button>
           <h3>{title}</h3>
-          <p className="modal-date">Deadline - {date}</p>
+          <p className="modal-date">{`${dates[0]}/${dates[1]}/${dates[2]}`}</p>
           <p className="modal-des">{description}</p>
           <div className="modal-btns">
             <button className="btn" onClick={toggleEditTask}>
