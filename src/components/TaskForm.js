@@ -72,7 +72,7 @@ const TaskForm = (props) => {
       <div className="form-content">
         <h3>Add Task</h3>
         <div className="input">
-          <label>Task Name</label>
+          <label>Task</label>
           <input
             value={title}
             type="text"

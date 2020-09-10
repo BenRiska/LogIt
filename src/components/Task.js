@@ -18,7 +18,7 @@ const Task = (props) => {
     >
       <h3>{title.slice(0, 10)}...</h3>
       <p>{description.slice(0, 8)}...</p>
-      <p>{`${month} / ${day}`}</p>
+      <p className="hide-date">{`${month} / ${day}`}</p>
       <div
         className="del"
         onClick={(e) => {
