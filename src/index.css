@@ -471,7 +471,7 @@ textarea {
 
 .edit-form {
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0;
   margin: 1rem 2rem;
   display: flex;
   flex-direction: column;
@@ -483,6 +483,11 @@ textarea {
 .edit-form form {
   width: 90%;
   height: 100%;
+}
+
+.edit-form form .input {
+  padding: 0.5rem 0.5rem;
+  margin: 0.3rem 0;
 }
 
 .edit-form form textarea {
@@ -497,7 +502,8 @@ textarea {
   box-shadow: var(--general-shadow);
   border-radius: 1rem;
   padding: 1rem;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-wrap: anywhere;
 }
 
 .widgets {
@@ -613,15 +619,89 @@ footer {
   }
 }
 
-@media only screen and (max-height: 1100px) {
-  .clock {
-    width: 15rem;
-    height: 15rem;
+@media only screen and (max-width: 1050px) {
+  .hide-desc {
+    display: none;
   }
 
-  .task-form {
-    padding: 1rem;
-    overflow: auto;
+  .task h3 {
+    width: 100%;
+  }
+
+  .home-content {
+    flex-direction: column;
+    overflow-wrap: anywhere;
+  }
+
+  .home-board {
+    width: 100%;
+  }
+
+  .task-section {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .task-list-section {
+    margin: 1rem;
+  }
+
+  .modal-date {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .task-list-section {
+    flex-direction: column;
+  }
+
+  .task-list {
+    width: 100% !important;
+    margin: 0 0 1rem 0;
+  }
+
+  .task h3 {
+    font-size: 0.8rem !important;
+  }
+
+  .widgets-container {
+    width: 100%;
+  }
+
+  .btn {
+    letter-spacing: initial;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.6rem;
+  }
+
+  .modal {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+
+  .edit-task {
+    padding: 0.5rem 1rem;
+  }
+
+  .edit-task h3 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .edit-task h3 {
+    font-size: 0.7rem;
+  }
+
+  .edit-task p {
+    font-size: 0.7rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .links-container {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -641,6 +721,7 @@ footer {
 
   .task-form {
     padding: 0.5rem;
+    overflow: auto;
   }
 
   .input {
@@ -669,5 +750,14 @@ footer {
 
   .btn {
     font-size: 0.7rem;
+  }
+
+  .links-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .widget-link {
+    padding: 0;
+    font-size: 0.8rem;
   }
 }

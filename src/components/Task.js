@@ -17,7 +17,7 @@ const Task = (props) => {
       className="task"
     >
       <h3>{title.slice(0, 10)}...</h3>
-      <p>{description.slice(0, 8)}...</p>
+      <p className="hide-desc">{description.slice(0, 8)}...</p>
       <p className="hide-date">{`${month} / ${day}`}</p>
       <div
         className="del"
