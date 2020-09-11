@@ -25,7 +25,6 @@ const useResources = (userId) => {
 
 const Widgets = (props) => {
   const resources = useResources(props.userId);
-  console.log(resources);
 
   return (
     <div className="widgets">

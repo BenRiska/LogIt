@@ -16,8 +16,10 @@ const Task = (props) => {
       key={id}
       className="task"
     >
-      <h3>{title.slice(0, 10)}...</h3>
-      <p className="hide-desc">{description.slice(0, 8)}...</p>
+      <h3>
+        {title.slice(0, 20)}
+        {title.length > 20 && "..."}
+      </h3>
       <p className="hide-date">{`${month} / ${day}`}</p>
       <div
         className="del"

@@ -9,7 +9,6 @@ const TaskForm = (props) => {
   const [error, setError] = useState("");
   setTimeout(setError, 3000);
   const fullDate = new Date();
-  console.log(fullDate);
 
   const onSubmit = (e) => {
     e.preventDefault();
