@@ -599,6 +599,15 @@ footer {
     display: none;
   }
 }
+@media only screen and (max-width: 1600px) {
+  :root {
+    --title-font-size: 1.5rem;
+  }
+
+  .task {
+    padding: 0.8rem 1.5rem;
+  }
+}
 
 @media only screen and (max-height: 1100px) {
   .clock {
@@ -609,5 +618,52 @@ footer {
   .task-form {
     padding: 1rem;
     overflow: auto;
+  }
+}
+
+@media only screen and (max-height: 1100px) {
+  :root {
+    --title-font-size: 1rem;
+  }
+
+  .home-nav {
+    padding: 1rem;
+  }
+
+  .clock {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .task-form {
+    padding: 0.5rem;
+  }
+
+  .input {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .task h3 {
+    font-size: 1rem;
+  }
+
+  .hr:before {
+    width: 8px;
+    height: 80px;
+  }
+
+  .mn:before {
+    width: 4px;
+    height: 90px;
+  }
+
+  .sc:before {
+    width: 2px;
+    height: 140px;
+  }
+
+  .btn {
+    font-size: 0.7rem;
   }
 }
