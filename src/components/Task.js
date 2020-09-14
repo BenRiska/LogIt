@@ -2,7 +2,7 @@ import React from "react";
 import fire from "../fire";
 
 const Task = (props) => {
-  let { title, id, description, date } = props.note;
+  let { title, id, date } = props.note;
   date = date.split("-");
   const month = date[1];
   const day = date[2].split(" ")[0];
